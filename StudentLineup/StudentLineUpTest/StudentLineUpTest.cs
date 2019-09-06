@@ -8,6 +8,32 @@ namespace StudentLineUpTest
     public class StudentLineUpTest
     {
         [TestMethod]
+        public void WhenGivenZeroStudentsWithHeightsShouldReturnZeroRowsCreated()
+        {
+            // Arrange
+            int[] studentHeights = { };
+
+            // Act
+            var rowsCreated = StudentLineUp.LineUp(studentHeights);
+
+            // Assert
+            Assert.AreEqual(0, rowsCreated);
+        }
+
+        [TestMethod]
+        public void WhenGivenOneStudentsWithHeightsShouldReturnOneRowCreated()
+        {
+            // Arrange
+            int[] studentHeights = { 1 };
+
+            // Act
+            var rowsCreated = StudentLineUp.LineUp(studentHeights);
+
+            // Assert
+            Assert.AreEqual(1, rowsCreated);
+        }
+
+        [TestMethod]
         public void WhenGiven5StudentsWithHeightsShouldReturnMinimumRowsCreated()
         {
             // Arrange

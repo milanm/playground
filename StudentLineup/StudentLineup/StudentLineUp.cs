@@ -13,28 +13,33 @@ namespace StudentLineup
    */
     public class StudentLineUp
     {
-        private static readonly List<List<int>> ListOfHeights = new List<List<int>>();
+        private static readonly List<List<int>> ListOfStudentRows = new List<List<int>>();
 
         public static int LineUp(int[] studentHeights)
         {
-            var numberOfRows = 1;
-            ListOfHeights.Add(new List<int>());
-
-            foreach (var t in studentHeights)
+            if (studentHeights == null || studentHeights.Length == 0)
             {
-                for (var j = 0; j < ListOfHeights.Count; j++)
+                return 0;
+            }
+
+            var numberOfRows = 1;
+            ListOfStudentRows.Add(new List<int>());
+
+            foreach (var studentHeight in studentHeights)
+            {
+                for (var i = 0; i < ListOfStudentRows.Count; i++)
                 {
-                    if (StudentFitsToRow(ListOfHeights[j], t))
+                    if (DoesStudentFitsToRow(ListOfStudentRows[i], studentHeight))
                     {
-                        ListOfHeights[j].Add(t);
+                        ListOfStudentRows[i].Add(studentHeight);
                     }
                     else
                     {
                         var newList = new List<int>
                         {
-                            t
+                            studentHeight
                         };
-                        ListOfHeights.Add(newList);
+                        ListOfStudentRows.Add(newList);
             
                         numberOfRows++;
                         break;
@@ -45,7 +50,7 @@ namespace StudentLineup
             return numberOfRows;
         }
 
-        private static bool StudentFitsToRow(IReadOnlyCollection<int> row, int newStudentHeight)
+        private static bool DoesStudentFitsToRow(IReadOnlyCollection<int> row, int newStudentHeight)
         {
             return row.Count == 0 || row.Any(studentHeight => studentHeight >= newStudentHeight);
         }
