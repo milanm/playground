@@ -27,7 +27,7 @@ namespace StudentLineup
             {
                 for (var i = 0; i < ListOfStudentRows.Count; i++)
                 {
-                    if (DoesStudentHeightFitsToRow(ListOfStudentRows[i], studentHeight))
+                    if (DoesStudentHeightFitsToRow(studentHeight, ListOfStudentRows[i]))
                     {
                         ListOfStudentRows[i].Add(studentHeight);
                     }
@@ -47,7 +47,7 @@ namespace StudentLineup
             return numberOfRows;
         }
 
-        private static bool DoesStudentHeightFitsToRow(IReadOnlyCollection<int> row, int newStudentHeight)
+        private static bool DoesStudentHeightFitsToRow(int newStudentHeight, IReadOnlyCollection<int> row)
         {
             return row.Count == 0 || row.Any(studentHeight => studentHeight >= newStudentHeight);
         }
