@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace StudentLineup
@@ -12,28 +13,28 @@ namespace StudentLineup
    */
     public class StudentLineUp
     {
-        private static readonly List<List<int>> listOfHeights = new List<List<int>>();
+        private static readonly List<List<int>> ListOfHeights = new List<List<int>>();
 
         public static int LineUp(int[] studentHeights)
         {
-            int numberOfRows = 1;
-            listOfHeights.Add(new List<int>());
+            var numberOfRows = 1;
+            ListOfHeights.Add(new List<int>());
 
-            for (int i = 0; i < studentHeights.Length; i++)
+            foreach (var t in studentHeights)
             {
-                for (int j = 0; j < listOfHeights.Count; j++)
+                for (var j = 0; j < ListOfHeights.Count; j++)
                 {
-                    if (StudentFitsToRow(listOfHeights[j], studentHeights[i]))
+                    if (StudentFitsToRow(ListOfHeights[j], t))
                     {
-                        listOfHeights[j].Add(studentHeights[i]);
+                        ListOfHeights[j].Add(t);
                     }
                     else
                     {
                         var newList = new List<int>
                         {
-                            studentHeights[i]
+                            t
                         };
-                        listOfHeights.Add(newList);
+                        ListOfHeights.Add(newList);
             
                         numberOfRows++;
                         break;
@@ -44,27 +45,12 @@ namespace StudentLineup
             return numberOfRows;
         }
 
-        private static bool StudentFitsToRow(List<int> row, int newStudentHeight)
+        private static bool StudentFitsToRow(IReadOnlyCollection<int> row, int newStudentHeight)
         {
-            if (row.Count == 0)
-            {
-                return true;
-            }
-            else
-            {
-                foreach (var studentHeight in row)
-                {
-                    if (studentHeight >= newStudentHeight)
-                    {
-                        return true;
-                    }
-                }
-
-                return false;
-            }
+            return row.Count == 0 || row.Any(studentHeight => studentHeight >= newStudentHeight);
         }
 
-        static void Main()
+        private static void Main()
         {
         }
     }
