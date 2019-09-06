@@ -1,0 +1,13 @@
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Test.deps.json
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Test.runtimeconfig.json
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Test.runtimeconfig.dev.json
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\b\Test\Debug\netcoreapp2.1\Test.dll
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\i\Test\Debug\netcoreapp2.1\Test.csprojAssemblyReference.cache
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\i\Test\Debug\netcoreapp2.1\Test.csproj.CoreCompileInputs.cache
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\i\Test\Debug\netcoreapp2.1\Test.AssemblyInfoInputs.cache
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\i\Test\Debug\netcoreapp2.1\Test.AssemblyInfo.cs
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\i\Test\Debug\netcoreapp2.1\Test.csproj.CopyComplete
+C:\Users\milan\source\repos\RomanToArabic\.vs\RomanToArabic\lut\0\i\Test\Debug\netcoreapp2.1\Test.dll
