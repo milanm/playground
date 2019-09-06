@@ -32,12 +32,11 @@ namespace StudentLineup
                         ListOfStudentRows[i].Add(studentHeight);
                     }
                     else
-                    {
-                        var newList = new List<int>
-                        {
-                            studentHeight
-                        };
-                        ListOfStudentRows.Add(newList);
+                    { 
+                        ListOfStudentRows.Add(new List<int>
+                                              {
+                                                  studentHeight
+                                              });
             
                         numberOfRows++;
                         break;
