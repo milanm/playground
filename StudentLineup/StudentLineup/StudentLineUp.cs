@@ -11,40 +11,19 @@ namespace StudentLineup
    */
     public class StudentLineUp
     {
-        private static readonly List<List<int>> ListOfStudentRows = new List<List<int>>();
 
         public static int LineUp(int[] studentHeights)
         {
-            if (studentHeights == null || studentHeights.Length == 0)
-            {
-                return 0;
-            }
-
-            var numberOfRows = 1;
-            ListOfStudentRows.Add(new List<int>());
-
-            foreach (var studentHeight in studentHeights)
-            {
-                for (var i = 0; i < ListOfStudentRows.Count; i++)
-                {
-                    if(ListOfStudentRows[i].Count == 0 || ListOfStudentRows[i].Any(sHeight => sHeight >= studentHeight))
-                    {
-                        ListOfStudentRows[i].Add(studentHeight);
-                    }
-                    else
-                    { 
-                        ListOfStudentRows.Add(new List<int>
-                                              {
-                                                  studentHeight
-                                              });
+            var hightestAdded = 0;
+            var result = 0;
             
-                        numberOfRows++;
-                        break;
-                    }
-                }
+            foreach (var t in studentHeights)
+            {
+                if (hightestAdded >= t) continue;
+                hightestAdded = t;
+                result++;
             }
-
-            return numberOfRows;
+            return result;
         }
 
         private static void Main()
