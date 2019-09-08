@@ -33,6 +33,32 @@ namespace StudentLineUpTest
         }
 
         [TestMethod]
+        public void WhenGiven3StudentsWithHeightsShouldReturnMinimumRowsCreated()
+        {
+            // Arrange
+            int[] studentHeights = { 9, 5, 2 };
+
+            // Act
+            var rowsCreated = StudentLineUp.LineUp(studentHeights);
+
+            // Assert
+            Assert.AreEqual(1, rowsCreated);
+        }
+
+        [TestMethod]
+        public void WhenGiven3StudentsWithDifferentHeightsShouldReturnMinimumRowsCreated()
+        {
+            // Arrange
+            int[] studentHeights = { 9, 5, 10 };
+
+            // Act
+            var rowsCreated = StudentLineUp.LineUp(studentHeights);
+
+            // Assert
+            Assert.AreEqual(2, rowsCreated);
+        }
+
+        [TestMethod]
         public void WhenGiven5StudentsWithHeightsShouldReturnMinimumRowsCreated()
         {
             // Arrange
