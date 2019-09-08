@@ -14,16 +14,24 @@ namespace StudentLineup
 
         public static int LineUp(int[] studentHeights)
         {
-            var hightestAdded = 0;
-            var result = 0;
-            
-            foreach (var t in studentHeights)
+            var rows = new List<int>();
+                
+            foreach (var studentHeight in studentHeights)
             {
-                if (hightestAdded >= t) continue;
-                hightestAdded = t;
-                result++;
+                var studentHigherIndex = rows.FindIndex(student => student > studentHeight);
+
+                if (studentHigherIndex != -1)
+                {
+                    rows[studentHigherIndex] = studentHeight;
+                }
+                else
+                {
+                    rows.Add(studentHeight);
+                }
+
             }
-            return result;
+
+            return rows.Count;
         }
 
         private static void Main()

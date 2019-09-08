@@ -46,6 +46,19 @@ namespace StudentLineUpTest
         }
 
         [TestMethod]
+        public void WhenGiven5StudentsWithDifferentHeightsShouldReturnMinimumRowsCreated()
+        {
+            // Arrange
+            int[] studentHeights = { 9, 2, 7, 1, 6 };
+
+            // Act
+            var rowsCreated = StudentLineUp.LineUp(studentHeights);
+
+            // Assert
+            Assert.AreEqual(2, rowsCreated);
+        }
+
+        [TestMethod]
         public void WhenGiven7StudentsWithHeightsShouldReturnMinimumRowsCreated()
         {
             // Arrange
